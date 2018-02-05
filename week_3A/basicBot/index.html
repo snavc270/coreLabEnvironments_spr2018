@@ -1,0 +1,44 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+  <title>Simple Chat</title>
+
+</head>
+
+
+<body onLoad="initScreen()">
+
+<form name="mainscreen" autofocus="autofocus" onkeypress = "if(event.keyCode == 13) {mainroutine(); scroll();return false}">
+
+<table align="center">
+<tr>
+<td>
+
+
+<br />
+<textarea id = "dialogArea" name="BasicTextArea1" rows="10" cols="75" onkeypress = "scroll"></textarea><br />
+
+<br />
+<textarea name="BasicTextArea4" rows="2" cols="75" autofocus ></textarea>
+<br />
+<!-- UNCOMMENT THIS TO SEE PREVIOUS OUTPUTS -->
+<!--  System Output<br />
+<textarea name="BasicTextArea2" rows="2" cols="75"></textarea><br />
+
+Your Last Input<br />
+<textarea name="BasicTextArea3" rows="2" cols="75"></textarea><br /> -->
+
+
+
+</td>
+</tr>
+</table>
+
+<p align = "center">
+</p>
+</form>
+</body>
+</html>

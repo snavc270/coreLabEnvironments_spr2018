@@ -1,0 +1,38 @@
+body {
+   background-color: black;
+   font-family: 'Inconsolata', monospace;
+   font-size: 14pt;
+   margin-top: 10px;
+   margin-left: 20px;
+   margin-right: 20px;
+   margin-bottom: 10px;
+   color: white;
+   }
+.button {
+   font-family: 'Inconsolata', monospace;
+   font-size: 10pt;
+   width: 92px;
+   }
+textarea {
+   font-family: 'Inconsolata', monospace;
+   font-size: 14pt;
+
+   border: none;
+   background-color: transparent;
+
+   resize: none;
+   outline: none;
+   color: white;
+   }
+
+
+select {
+   font-family: 'Inconsolata', monospace;
+   font-size: 14pt;
+   width: 350px;
+   margin-left: 0px;
+   }
+td {
+   font-family: 'Inconsolata', monospace;
+   font-size: 14pt;
+  }
