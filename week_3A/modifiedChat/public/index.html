@@ -2,14 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cat Enthusiasts Chatroom</title>
+  <title>Church of YEEZUS</title>
 
-  <style>
-input {
-    display: inline;
-}
-
-</style>
+  <!-- link our style sheet to our html file -->
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 
@@ -26,7 +22,7 @@ input {
 	<h4> Please choose your username.</h4>
 	<br>
 	Username: 
-	<input type="text" name="Nickname" value="LonelyCatLady">
+	<input type="text" name="Nickname" value="">
 	<br>
 	<input type="submit" value="Submit">
 </form>
@@ -36,12 +32,7 @@ input {
 <!-- Chatroom          -->
 
 
-<div id="chatroom" style="
-			height: 500px;
-			display: none; 	
-			background-color: #D3D3D3;
-			margin: 100px;
-			position: relative;"  >
+<div id="chatroom" >
 	<div style="padding:10px; height: 400px; overflow-y: scroll" id=chatbox>You have entered the chatroom</div>
 	<div style=" width:100%; position:absolute; bottom:0;"> 
 		<form action="javascript:clientMessage();" id="inputMessage">

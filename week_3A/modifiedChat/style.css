@@ -1,0 +1,11 @@
+input {
+	display: inline;
+}
+
+#chatroom {
+	height: 500px;
+	display: none; 	
+	background-color: blue;
+	margin: 100px;
+	position: relative; 
+} 
