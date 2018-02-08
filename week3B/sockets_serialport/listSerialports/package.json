@@ -1,0 +1,7 @@
+{
+  "author": "PamelaLiou",
+  "dependencies": {
+    "serialport": "^6.0.5",
+    "ws": "*"
+  }
+}

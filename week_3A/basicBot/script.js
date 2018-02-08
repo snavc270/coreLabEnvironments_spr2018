@@ -1,9 +1,5 @@
-//here we created array to hold our possible user responses and the appropriate system output 
-//the first item in the Array is what the user entered after are the possible system responses
-//$1 inserts the user responses 
-//.* indicates any input 
-// \. indicates end of a line 
-// \? indicates ends with a question mark 
+//here we store all fo the conversation patterns; The first item in the array is the user input
+//if the user enters something found in the 
 var convpatterns = new Array (
   new Array (".*hello.*","Greetings."),
   new Array ("^I (?:wish |would like )(?:I could |I was able to |to be able to )(.*)\.","I wish that too sometimes"),
@@ -49,11 +45,10 @@ var convpatterns = new Array (
 uinput = ""
 soutput = ""
 dialog = "Hi, how are you?" + "\n"; 
- 
+
+var numInputs = 0 ; 
 
 function mainroutine() {
-    //get the input from the basic text area 4 (where the user types)
-    //set the new dialog equal to the old dialog + the new dialog
     uinput = document.mainscreen.BasicTextArea4.value;
     dialog = dialog + "User: " + uinput +  '\r' + "\n";
     conversationpatterns()
@@ -63,11 +58,8 @@ function mainroutine() {
 
 //-------
 function conversationpatterns() {
-
-  //here we write a for loop to loop through the conversation arrays
    for (i=0; i < convpatterns.length; i++) {
     re = new RegExp (convpatterns[i][0], "i");
-    //if there is a user input, return a random respons from the system response options 
     if (re.test(uinput)) {
       len = convpatterns[i].length - 1;
       index = Math.ceil( len * Math.random());
@@ -97,6 +89,9 @@ function updatescreen() {
  // document.mainscreen.BasicTextArea3.value = uinput
 
  document.mainscreen.BasicTextArea4.value = ""
+
+ numInputs += 1; 
+
 }
 
 //-------
