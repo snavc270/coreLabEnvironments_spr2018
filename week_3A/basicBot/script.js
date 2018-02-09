@@ -32,7 +32,7 @@ var convpatterns = new Array (
   new Array ("Is there (.*?)[\?]", "Do you think there is $1?","It's likely that there is $1.", "Would you like there to be $1?"),
   new Array ("My (.*)\.", "I see, your $1.","Why do you say that your $1?",	"When your $1, how do you feel?"),
   new Array ("^You (.*)\.", "We should be discussing you, not me.","Why do you say that about me?","No, let's talk more about you"),
-  new Array ("Why (.*)\?", "Why don't you tell me the reason why $1?","Why do you think $1?", "I don't know why $1. I don't know anymore about $1 than you do." ),
+  new Array ("Why is the sky blue (.*)\?", "Why don't you tell me the reason why $1?","Why do you think $1?", "I don't know why $1. I don't know anymore about $1 than you do." ),
   new Array ("I want (.*)\.", "I want $1 as well.","I've wanted $1 before as well. Why do you want $1?","What would you do if you got $1? I would love to have $1","If you got $1, then what would you do?"),
   new Array ("(.*) mother(.*)\.",	"Tell me more about your mother.","What was your relationship with your mother like?",	"How do you feel about your mother?","How does this relate to your feelings today?","Good family relations are important."),
   new Array ("(.*) father(.*)\.","Tell me more about your father.", "How did your father make you feel?","How do you feel about your father?","Does your relationship with your father relate to your feelings today?",	"Do you have trouble showing affection with your family?"),
