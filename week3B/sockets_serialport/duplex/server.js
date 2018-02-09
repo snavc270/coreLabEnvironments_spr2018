@@ -9,8 +9,8 @@ var port = process.env.PORT || 8080;
 var SerialPort = require('serialport');
 var serialVal;
 
-var mySerialPort = new SerialPort('/dev/cu.usbmodem1421', { //paste your port path here
-  parser: SerialPort.parsers.readline('\n')
+var mySerialPort = new SerialPort('/dev/tty.usbmodem1411', { //paste your port path here
+  parser: new SerialPort.parsers.Readline('\n')
 });
 
 mySerialPort.on('data', function (data) {
