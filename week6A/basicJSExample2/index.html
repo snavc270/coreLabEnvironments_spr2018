@@ -1,0 +1,31 @@
+<!-- http://samjbrenner.com/cc/fall2016/week6
+ -->
+
+<!-- specify the type of document/ language our code is in -->
+<!DOCTYPE html>
+<html>
+
+<!-- here is where we place all of the code we want to load before the page loads  -->
+<!-- we want to link our javascript before our html elements load -->
+    <head>
+        <script src="script.js";></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+    	<div id="planet">
+            <div id="planetBody" class="planetBody"></div>
+            <div id="planetRing"></div>
+            <div id="planetCover" class="planetBody"></div>
+
+            <div class="star" id="star1"></div>
+            <div class="star" id="star2"></div>
+            <div class="star" id="star3"></div>
+        </div>
+  <!--       <button id="myButton">Click Me!</button> -->
+        <input id="numStarsInput" placeholder="How Many Stars?" />
+		<button id="addStarsBtn">Add Stars!</button>
+
+    </body>
+</html>
+
