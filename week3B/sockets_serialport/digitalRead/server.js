@@ -1,6 +1,3 @@
-
-
-//Lists Serialports available
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
@@ -9,16 +6,23 @@ var port = process.env.PORT || 8080;
 var SerialPort = require('serialport');
 var serialVal;
 
-var mySerialPort = new SerialPort('/dev/tty.usbmodem1411', { //paste your port path here
-  baudRate: 9600,
-  parser: new SerialPort.parsers.Readline('\n')
-});
+const Readline = SerialPort.parsers.Readline; //how to read raw data
+//add your path to the serialport
+const mySerialPort = new SerialPort('/dev/cu.usbmodem1411' , {baudRate:9600}); 
+const parser = mySerialPort.pipe(new Readline({ delimiter: '\n' })); //try adding different delimiter;
+//the delimiter is where your parser will split your data 
+
+//show to see raw bytes
+//mySerialPort.on('data', console.log); 
+
+parser.on('data', dataToSerialVal); 
 
 
-mySerialPort.on('data', function (data) {
-  console.log('Data: ' + data);
-  //serialVal = data;
-});
+function dataToSerialVal(data){
+ 	serialVal= data.toString();
+ 	console.log(serialVal);
+ }
+
 
 server.listen(port, function(){
 	console.log('Server listening on ' + port);
@@ -26,18 +30,9 @@ server.listen(port, function(){
 
 io.on('connection',function(client){
 	console.log('Socket connected...');
-	//var lastSerialVal;
-
-	mySerialPort.on('data', function (data) {
-  		console.log('Data: ' + data);
-  		serialVal = data;
-  		client.emit('messages', {serialValue: serialVal});
-
-	});
-
-	//client.emit('messages', {serialValue: serialVal});//inital value
+	client.emit('messages', {serialValue: serialVal});//inital value
 	client.on('getSerialVal', function(){
-	 	client.emit('messages', {serialValue: serialVal});
+		client.emit('messages', {serialValue: serialVal});
 
 	});
 

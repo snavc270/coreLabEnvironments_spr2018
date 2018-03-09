@@ -11,6 +11,8 @@ function onWindowLoaded(event) {
 	myButton.addEventListener("click", onButtonClick); 
 	
     console.log("loaded");
+
+    //myfunction(); 
 }
 
 

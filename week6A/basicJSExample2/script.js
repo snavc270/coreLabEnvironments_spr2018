@@ -3,16 +3,25 @@ window.addEventListener("load", onWindowLoaded);
 function onWindowLoaded(event) {
 	var addStarsBtn = document.getElementById("addStarsBtn");
     addStarsBtn.addEventListener("click", onAddStarsBtnClick);
+
 }
 
 
 function onAddStarsBtnClick() {
-    // 1. get the element
+    // // 1. get the element
     var numStarsInput = document.getElementById("numStarsInput");
+    var numStars = numStarsInput.value; 
 
-    // 2. get its value property
-    var numStars = numStarsInput.value
 
+/////if you need to do some text parsing 
+    var textSplit = numStars.split(" ");  
+
+    for(var i = 0; i<textSplit.length; i++){
+            console.log(textSplit[i]);
+    }
+
+
+ 
     // 3. for as many times as the value says...
     for (var i=0; i < numStars; i++) {
 

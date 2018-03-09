@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- Canvas animation based on https://www.kirupa.com/snippets/examples/simple_canvas_animation.htm -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>AnalogRead Example</title>
+<title>Digital Read Example</title>
 <style>
 canvas {
 	border: 3px #CCC solid;
@@ -14,24 +14,22 @@ canvas {
 </div>
 
 <script src = "/socket.io/socket.io.js"></script>
-
 <script> 
 	var socket = io.connect('http://localhost:8080');
-	var radius;
-	var mappedRadius;
+	// var radius;
+	// var mappedRadius;
 	
 	socket.on('messages', function (data){
-		digitalRead = parseInt(data.serialValue); 
+		//parsing your values into integers
+		digitalRead = parseInt(data.serialValue);
 		if (digitalRead == 0){
-			document.getElementById("container").style.backgroundColor = 'green';
-			
+			document.getElementById("container").innerHTML = "OFF";
 		}else if(digitalRead == 1){
-			document.getElementById("container").style.backgroundColor = 'red';
+			document.getElementById("container").innerHTML = "ON";
 		}
-
 		socket.emit('getSerialVal'); 
-
-	});	
+	});
+		
     </script>
 
 
