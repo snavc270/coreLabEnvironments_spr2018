@@ -38,6 +38,8 @@ io.on('connection',function(client){
 
 });
 
+app.use(express.static(".")); 
+
 app.get('/', function(req,res){
 	console.log('serving index.html');
 	res.sendFile(__dirname + '/digitalRead.html');
